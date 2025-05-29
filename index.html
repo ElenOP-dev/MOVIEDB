@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body id="indexPage">
+    <!-- header start -->
+    <header>
+      <div class="container-for-header">
+        <nav>
+          <div class="navigation">
+            <div class="for-left-part">
+              <img
+                class="menu-toggle"
+                src="assets/icons/menu-toggle-icon.svg"
+                alt="Menu Icon"
+              />
+            
+              <img
+                class="desktop-logo"
+                src="assets/images/logo-for-desktop.svg"
+                alt="Brand Logo"
+              />
+              <ul class="open-menu">
+                <li>
+                  <a href="#">Movies</a>
+                  <ul class="dropdown">
+                    <li><a>Popular</a></li>
+                    <li><a>Now Playing</a></li>
+                    <li><a>Upcoming</a></li>
+                    <li><a>Top Rated</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">TV Shows</a>
+                  <ul class="dropdown">
+                    <li><a>Pupular</a></li>
+                    <li><a>Airing Today</a></li>
+                    <li><a>On TV</a></li>
+                    <li><a>Top Rated</a></li>
+                  </ul>
+                </li>
+                <li id="small-li">
+                  <a href="#">People</a>
+                  <ul class="dropdown">
+                    <li><a>Popular People</a></li>
+                  </ul>
+                </li>
+                <li class="none-for-mobile">
+                  <a class="more" href="#">More</a>
+                  <ul class="dropdown">
+                    <li><a>Discussions</a></li>
+                    <li><a>Leaderboard</a></li>
+                    <li><a>Support</a></li>
+                    <li><a>API Documentation</a></li>
+                    <li><a>API for Business</a></li>
+                  </ul>
+                </li>
+                <div class="only-for-mobile">
+                  <li><a>Contribution Bible</a></li>
+                  <li><a>Discussions</a></li>
+                  <li><a>Leaderboard</a></li>
+                  <li><a>API</a></li>
+                  <li><a>Support</a></li>
+                  <li id="small-li"><a>About</a></li>
+                </div>
+                <li class="logout"><a>Logout</a></li>
+              </ul>
+            </div>
+            <img
+            class="brand-logo"
+            src="assets/images/logo-for-mobile.svg"
+            alt="Brand Logo"
+          />
+            <div class="right-part-icons">
+              <ul>
+                <li class="only-for-desktop">
+                  <a href="#">
+                    <img
+                      class="plus"
+                      src="assets/icons/plus.svg"
+                      alt="plus Icon"
+                    />
+                  </a>
+                </li>
+                <li class="only-for-desktop">
+                  <div class="language"><a href="#">en</a></div>
+                </li>
+                <li>
+                  <img
+                    class="note"
+                    src="assets/icons/glyphicons-basic-441-bell-9cd2af257b98c4af3460078777d8e38a5e12bca89704eeac2f39273afcbd06ff.svg"
+                    alt="Notification Icon"
+                  />
+                </li>
+                <li class="username">
+                  <a class="user"><span class="avatar">E</span></a>
+                  <span class="tooltip">Profile and Settings</span>
+                  <div class="user-dropdown">
+                    <div class="group">
+                      <h2>Elas</h2>
+                      <span>View profile</span>
+                    </div>
+                    <div class="group">
+                      <p>DIscussions</p>
+                      <p>Lists</p>
+                      <p>Ratings</p>
+                      <p>Watchlist</p>
+                    </div>
+                    <div class="group">
+                      <p>API Subscription</p>
+                      <p>Edit Profile</p>
+                      <p>Settings</p>
+                    </div>
+                    <div class="group">
+                      <p>Logout</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    class="search"
+                    src="assets/icons/search.svg"
+                    alt="Search Icon"
+                  />
+                  <img
+                    class="close-icon"
+                    src="assets/icons/glyphicons-basic-599-menu-close-7400e9a2ea92ad8d7cccf18d1ea34cd690790638a6e7768922eaef6e07109723.svg"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- small searching part start -->
+      <div class="searching-input">
+        <img
+          class="search-img"
+          src="assets/icons/glyphicons-basic-28-search-3992eb97b2b749f09793f9653407c499aa896d99535cb35cc66682d26a49df13.svg"
+          alt=""
+        />
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search for a movie,tv show,person..."
+        />
+      </div>
+      <!-- searching part -->
+    </header>
+    <!-- header end -->
+
+    <!-- main part start  -->
+    <main>
+      <div class="container">
+        <!-- aside section start -->
+        <section class="aside-section">
+          <h1>Popular Movies</h1>
+          <!-- sorting part -->
+          <div class="sorting-div">
+            <div class="sort-header-part">
+              <h2>Sort</h2>
+              <img
+                class="arrow-right first-arrow"
+                src="assets/icons/arrow-righ.svg"
+                alt="Arrow"
+              />
+            </div>
+            <div class="sorting-part">
+              <h3>Sort Results By</h3>
+              <!-- <div class="sorting-options">
+                
+                <svg
+                  class="arrow"
+                  viewBox="0 0 512 512"
+                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M256 352 128 160h256z"></path>
+                </svg>
+              </div> -->
+              <select class="sorting-options" name="" id=""></select>
+
+            
+            </div>
+          </div>
+          <!-- filtering -->
+          <div class="filter-part">
+            <div class="filter-header-part">
+              <h2>Filters</h2>
+              <img
+                class="arrow-right second-arrow"
+                src="assets/icons/arrow-righ.svg"
+                alt="Arrow"
+              />
+            </div>
+            <div class="filters">
+              <div class="show-me">
+                <p class="filter-small-part-header">
+                  Show Me
+                </p>  
+                 <div class="show-me-options">
+                <label>
+                  <input type="radio" checked />
+                  <span>Everything</span>
+                </label>
+                <label>
+                  <input type="radio" />
+                  <span> Movies I haven't seen</span>
+                </label>
+                <label>
+                  <input type="radio" />
+                  <span>Movies I have seen</span>
+                </label>
+              </div>
+              </div>
+           
+              <div class="release-dates">
+                <p class="filter-small-part-header">Release Dates</p>
+                <span>
+                  <input type="checkbox" checked />
+                  <span class="search-release">Search all releases?</span>
+                </span>
+                <div class="date-div">
+                  <p>from</p>
+                  <div class="calendar-div">
+                    <input type="text" />
+                    <button class="calendar-button">
+                      <svg
+                        class="calendar"
+                        viewBox="0 0 512 512"
+                        focusable="false"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M416 416H288V288h128zm64-352v384c0 17.6-14.4 32-32 32H64c-17.6 0-32-14.4-32-32V64c0-17.6 14.4-32 32-32h64V0h64v32h128V0h64v32h64c17.6 0 32 14.4 32 32m-32 128H64v255.9l.1.1 383.9-.1zm0-127.9q-.15-.15 0 0l-64-.1v32h-64V64H192v32h-64V64H64.1l-.1.1V160h384z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="date-div">
+                  <p>to</p>
+                  <div class="calendar-div">
+                    <input type="text" placeholder="10/25/2025" />
+                    <button class="calendar-button">
+                      <svg
+                        class="calendar"
+                        viewBox="0 0 512 512"
+                        focusable="false"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M416 416H288V288h128zm64-352v384c0 17.6-14.4 32-32 32H64c-17.6 0-32-14.4-32-32V64c0-17.6 14.4-32 32-32h64V0h64v32h128V0h64v32h64c17.6 0 32 14.4 32 32m-32 128H64v255.9l.1.1 383.9-.1zm0-127.9q-.15-.15 0 0l-64-.1v32h-64V64H192v32h-64V64H64.1l-.1.1V160h384z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="genres">
+                <p class="filter-small-part-header">Genres</p>
+                <div class="select-genres"></div>
+              </div>
+              <div class="certification">
+                <p class="filter-small-part-header">Certification</p>
+              </div>
+              <div class="choose-language">
+                <p class="filter-small-part-header">
+                  Language
+                  <img
+                    class="question-icon"
+                    src="assets/icons/glyphicons-basic-635-circle-question-58cc1ee10fd7a11546f8e97b1b5590b2d6e0c883acaea64a5f4c2c5b60f9f364.svg"
+                    alt="Question Icon"
+                  />
+                </p>
+                <div class="language-options">
+                  <p>None Selected</p>
+                  <svg
+                    class="arrow"
+                    viewBox="0 0 512 512"
+                    focusable="false"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M256 352 128 160h256z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="user-score">
+                <p class="filter-small-part-header">User Score</p>
+                <div>
+                  <div class="top-dot">
+                    <div class="big"></div>
+                    <div class="small"></div>
+                    <div class="small"></div>
+                    <div class="small"></div>
+                    <div class="small"></div>
+                    <div class="big"></div>
+                    <div class="small"></div>
+                    <div class="small"></div>
+                    <div class="small"></div>
+                    <div class="small"></div>
+                    <div class="big"></div>
+                  </div>
+                  <div class="bottom-dot">
+                    <div class="bottom-big"></div>
+                    <div class="bottom-small"></div>
+                    <div class="bottom-small"></div>
+                    <div class="bottom-small"></div>
+                    <div class="bottom-small"></div>
+                    <div class="bottom-big"></div>
+                    <div class="bottom-small"></div>
+                    <div class="bottom-small"></div>
+                    <div class="bottom-small"></div>
+                    <div class="bottom-small"></div>
+                    <div class="bottom-big"></div>
+                  </div>
+                </div>
+                <div class="slider">
+                  <div class="left-dot"></div>
+                  <div class="line"></div>
+                  <div class="right-dot"></div>
+                </div>
+                <ul class="score-numbers">
+                  <li>0</li>
+                  <li>5</li>
+                  <li>10</li>
+                </ul>
+              </div>
+              <div class="user-votes">
+                <p class="filter-small-part-header">Minimum User Votes</p>
+                <div class="user-votes-slider">
+                  <div class="votes-top-dot">
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                  </div>
+                  <div class="votes-bottom-dot">
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                    <div class="small-mark"></div>
+                    <div class="mark"></div>
+                  </div>
+                  <div class="slider">
+                    <div class="votes-line"></div>
+                    <div class="dot"></div>
+                  </div>
+                  <ul class="vote-numbers">
+                    <li>0</li>
+                    <li>100</li>
+                    <li>200</li>
+                    <li>300</li>
+                    <li>400</li>
+                    <li>500</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="runtime">
+                <p class="filter-small-part-header">Runtime</p>
+                <div class="runtime-slider">
+                  <div class="runtime-top-dot">
+                    <div class="bigger-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="bigger-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="bigger-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="bigger-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                  </div>
+                  <div class="runtime-bottom-dot">
+                    <div class="bigger-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="bigger-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="bigger-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="bigger-mark"></div>
+                    <div class="smaller-mark"></div>
+                    <div class="smaller-mark"></div>
+                  </div>
+                  <div class="slider">
+                    <div class="runtime-line"></div>
+                    <div class="runtime-dot"></div>
+                    <div class="runtime-second-dot"></div>
+                  </div>
+                  <ul class="runtime-numbers">
+                    <li>0</li>
+                    <li>120</li>
+                    <li>240</li>
+                    <li>360</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="keywords">
+                <p class="filter-small-part-header">Keywords</p>
+                <input class="keyword-input" type="text" placeholder="Filter by keywords..." />
+                <div class="keywords-div"></div>
+              </div>
+            </div>
+          </div>
+          <button class="aside-search">Search</button>
+        </section>
+        <!-- movie section -->
+
+        <section class="movies-section">
+          
+        </section>
+        <div id="scroll"></div>
+      </div>
+    </main>
+
+    <!-- footer start -->
+    <footer>
+      <div class="footer-content">
+        <div class="logo-div">
+          <img src="assets/images/logo-for-mobile.svg" alt="Brand Logo" />
+          <button><a href="#">Hi Elas!</a></button>
+        </div>
+
+        <div class="lists">
+          <h3>THE BASICS</h3>
+          <ul>
+            <li><a>About TMDB</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a>Support Forums</a></li>
+            <li><a>API Documentation</a></li>
+            <li><a>System Status</a></li>
+          </ul>
+        </div>
+        <div class="lists">
+          <h3>GET INVOLVED</h3>
+          <ul>
+            <li><a>Contribution Bible</a></li>
+            <li><a>Add New Movie</a></li>
+            <li><a>Add New TV Show</a></li>
+          </ul>
+        </div>
+        <div class="lists">
+          <h3>COMMUNITY</h3>
+          <ul>
+            <li><a>Guidelines</a></li>
+            <li><a>Discussions</a></li>
+            <li><a>Leaderboard</a></li>
+          </ul>
+        </div>
+        <div class="lists">
+          <h3>LEGAL</h3>
+          <ul>
+            <li><a>Terms of Use</a></li>
+            <li><a>API Terms of Use</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>DMCA Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="last-row">Build 7d64203 (8679)</div>
+    </footer>
+    <!-- footer end  -->
+    <script src="js/app.js" type="module" defer></script>
+  </body>
+</html>
