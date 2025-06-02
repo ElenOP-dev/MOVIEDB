@@ -6,6 +6,7 @@ export const FILTERS = document.querySelector(".filters");
 export const FILTER_BUTTON = document.querySelector(".second-arrow");
 
 
+
 export function asideOpenMenu(button, target) {
   button.addEventListener("click", () => {
     button.classList.toggle("rotated");
@@ -24,36 +25,49 @@ export const SORT_BY_OPTIONS = [
   { label: "Title (Z-A)", value: "title.desc" },
 ];
 
-const SORTING_CONTAINER = document.querySelector(".sorting-options");
-let selectedSort;
-const SEARCH_BUTTON = document.querySelector('.aside-search')
+const SORTING_CONTAINER = document.querySelector(".custom-select .options-container");
+const SELECTED_DISPLAY = document.querySelector(".custom-select .selected-option");
+const SEARCH_BUTTON = document.querySelector('.aside-search');
+
+let selectedSort
+
+
 export function sortingOptions() {
-  SORT_BY_OPTIONS.forEach((item) => {
-    const OPTION = document.createElement("option");
-    OPTION.value = item.value;
-    OPTION.textContent = item.label;
-    SORTING_CONTAINER.appendChild(OPTION);
+  
+  SORT_BY_OPTIONS.forEach(item => {
+    const OPTION_DIV = document.createElement("div");
+    OPTION_DIV.classList.add("option");
+    OPTION_DIV.textContent = item.label;
+    OPTION_DIV.dataset.value = item.value;
+
+    OPTION_DIV.addEventListener("click", () => {
+      selectedSort = item.value;
+      SELECTED_DISPLAY.textContent = item.label;
+      document.querySelector(".custom-select").classList.remove("open");
+
+      
+      if (selectedSort) {
+        SEARCH_BUTTON.classList.add('clicked');
+      } else {
+        SEARCH_BUTTON.classList.remove('clicked');
+      }
+    });
+
+    SORTING_CONTAINER.appendChild(OPTION_DIV);
   });
 
-  SORTING_CONTAINER.addEventListener('change', (event) => {
-    selectedSort = event.target.value
-    console.log(selectedSort)
-    
+  SELECTED_DISPLAY.addEventListener("click", () => {
+    document.querySelector(".custom-select").classList.toggle("open");
+  });
 
-    if (selectedSort) {
-      SEARCH_BUTTON.classList.add('clicked')
-    } else {
-      SEARCH_BUTTON.classList.remove('clicked')
-
+  
+  document.addEventListener("click", (e) => {
+    if (!document.querySelector(".custom-select").contains(e.target)) {
+      document.querySelector(".custom-select").classList.remove("open");
     }
-
-  })
-
-
-
-
+  });
 }
 
 export function getSortings() {
-  return selectedSort
+  return selectedSort;
 }

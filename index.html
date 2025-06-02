@@ -15,6 +15,7 @@
   <body id="indexPage">
     <!-- header start -->
     <header>
+      <div class="top-loader"></div>
       <div class="container-for-header">
         <nav>
           <div class="navigation">
@@ -24,7 +25,7 @@
                 src="assets/icons/menu-toggle-icon.svg"
                 alt="Menu Icon"
               />
-            
+
               <img
                 class="desktop-logo"
                 src="assets/images/logo-for-desktop.svg"
@@ -77,10 +78,10 @@
               </ul>
             </div>
             <img
-            class="brand-logo"
-            src="assets/images/logo-for-mobile.svg"
-            alt="Brand Logo"
-          />
+              class="brand-logo"
+              src="assets/images/logo-for-mobile.svg"
+              alt="Brand Logo"
+            />
             <div class="right-part-icons">
               <ul>
                 <li class="only-for-desktop">
@@ -178,20 +179,20 @@
             </div>
             <div class="sorting-part">
               <h3>Sort Results By</h3>
-              <!-- <div class="sorting-options">
-                
-                <svg
-                  class="arrow"
-                  viewBox="0 0 512 512"
-                  focusable="false"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M256 352 128 160h256z"></path>
-                </svg>
-              </div> -->
-              <select class="sorting-options" name="" id=""></select>
-
-            
+              <div class="custom-select">
+                <div class="selected-option">
+                  Popularity Descending
+                  <svg
+                    viewBox="0 0 512 512"
+                    focusable="false"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M256 352 128 160h256z"></path>
+                  </svg>
+                  
+                </div>
+                <div class="options-container"></div>
+              </div>
             </div>
           </div>
           <!-- filtering -->
@@ -206,25 +207,23 @@
             </div>
             <div class="filters">
               <div class="show-me">
-                <p class="filter-small-part-header">
-                  Show Me
-                </p>  
-                 <div class="show-me-options">
-                <label>
-                  <input type="radio" checked />
-                  <span>Everything</span>
-                </label>
-                <label>
-                  <input type="radio" />
-                  <span> Movies I haven't seen</span>
-                </label>
-                <label>
-                  <input type="radio" />
-                  <span>Movies I have seen</span>
-                </label>
+                <p class="filter-small-part-header">Show Me</p>
+                <div class="show-me-options">
+                  <label>
+                    <input type="radio" checked />
+                    <span>Everything</span>
+                  </label>
+                  <label>
+                    <input type="radio" />
+                    <span> Movies I haven't seen</span>
+                  </label>
+                  <label>
+                    <input type="radio" />
+                    <span>Movies I have seen</span>
+                  </label>
+                </div>
               </div>
-              </div>
-           
+
               <div class="release-dates">
                 <p class="filter-small-part-header">Release Dates</p>
                 <span>
@@ -456,7 +455,11 @@
               </div>
               <div class="keywords">
                 <p class="filter-small-part-header">Keywords</p>
-                <input class="keyword-input" type="text" placeholder="Filter by keywords..." />
+                <input
+                  class="keyword-input"
+                  type="text"
+                  placeholder="Filter by keywords..."
+                />
                 <div class="keywords-div"></div>
               </div>
             </div>
@@ -465,9 +468,7 @@
         </section>
         <!-- movie section -->
 
-        <section class="movies-section">
-          
-        </section>
+        <section class="movies-section"></section>
         <div id="scroll"></div>
       </div>
     </main>

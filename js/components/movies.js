@@ -2,33 +2,39 @@ import { APP_API, headers } from "../utils/constants.js";
 import { getMovieData } from "../api/api.js";
 import { getSortings } from "./sorting.js";
 import { getSelectedGenres } from "./genres.js";
+import { startLoading, finishLoading } from "./loader.js";
 
 const MOVIES_SECTION = document.querySelector(".movies-section");
 let currentPage = 1;
-let currentGenres = []
+let currentGenres = [];
 let isLoading = false;
-export async function getMovies(selectedGenres,selectedSorting) {
+export async function getMovies(
+  selectedGenres,
+  selectedSorting,
+  selectedKeyword
+) {
   if (isLoading) return;
   isLoading = true;
 
   const IS_FILTERED_SEARCH =
-    (Array.isArray(selectedGenres) && selectedGenres.length > 0) || (selectedSorting)
+    selectedGenres?.length > 0 || selectedSorting || selectedKeyword;
 
   if (IS_FILTERED_SEARCH) {
     currentPage = 1;
     MOVIES_SECTION.innerHTML = "";
-    currentGenres = selectedGenres
-  }else if(currentPage === 1 && selectedGenres === undefined) {
-    currentGenres = []
+    currentGenres = selectedGenres;
+  } else if (currentPage === 1 && selectedGenres === undefined) {
+    currentGenres = [];
   }
 
   let data;
 
-  if (selectedGenres) {
-    data = await getMovieData(currentPage, selectedGenres,selectedSorting);
-  } else {
-    data = await getMovieData(currentPage);
-  }
+  data = await getMovieData(
+    currentPage,
+    selectedGenres,
+    selectedSorting,
+    selectedKeyword
+  );
 
   data.results.forEach((movie) => {
     const { id, vote_average, title, overview, release_date, poster_path } =
@@ -36,7 +42,7 @@ export async function getMovies(selectedGenres,selectedSorting) {
     const MOVIE_ELEMENT = document.createElement("a");
     MOVIE_ELEMENT.classList.add("movie");
     MOVIE_ELEMENT.id = `movie-${id}`;
-    MOVIE_ELEMENT.href = `details.html?id=${id}`;
+    MOVIE_ELEMENT.href = `pages/details.html?id=${id}`;
     const formattedDate = new Date(release_date).toLocaleDateString("en-US", {
       month: "long",
       day: "numeric",
@@ -99,7 +105,7 @@ export async function getMovies(selectedGenres,selectedSorting) {
             </div>
           </div>
     <div class="percent">
-      <div class="gradient"  style="background: ${background}">
+      <div class="gradient" style="background: ${background}">
         <span>${VOTE_DISPLAY}</span>
       </div>
     </div>
@@ -150,11 +156,15 @@ export async function getMovies(selectedGenres,selectedSorting) {
 const LOAD_MORE = document.createElement("button");
 LOAD_MORE.textContent = "Load More";
 LOAD_MORE.classList.add("load-more");
-MOVIES_SECTION.after(LOAD_MORE);
+if (LOAD_MORE) {
+  MOVIES_SECTION.after(LOAD_MORE);
+}
 
 LOAD_MORE.addEventListener("click", () => {
-  getMovies(getSelectedGenres(),getSortings());
-  currentPage++
+  startLoading();
+  setTimeout(finishLoading, 2000);
+  getMovies(getSelectedGenres(), getSortings());
+  currentPage++;
 
   const INFINITE_SCROLL = document.querySelector("#scroll");
 
@@ -162,6 +172,8 @@ LOAD_MORE.addEventListener("click", () => {
     (entries) => {
       if (entries[0].isIntersecting) {
         getMovies();
+        startLoading();
+        setTimeout(finishLoading, 2000);
       }
     },
     {

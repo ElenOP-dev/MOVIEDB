@@ -2,7 +2,6 @@ import { getGenresData } from "../api/api.js";
 const GENRES_ARRAY = [];
 const SEARCH_BUTTON = document.querySelector(".aside-search");
 
-
 export async function renderGenres() {
   const GENRE_LIST = document.querySelector(".select-genres");
   const GENRES = await getGenresData();
@@ -37,10 +36,9 @@ export async function renderGenres() {
       }
 
       if (GENRES_ARRAY.length > 0) {
-        SEARCH_BUTTON.classList.add('clicked')
+        SEARCH_BUTTON.classList.add("clicked");
       } else {
-        SEARCH_BUTTON.classList.remove('clicked')
-
+        SEARCH_BUTTON.classList.remove("clicked");
       }
     });
   });

@@ -20,7 +20,7 @@ export async function getMovieData(
   page = 1,
   selectedGenres = [],
   sortBy,
-  keywords = []
+  keyword
 ) {
   let url = `${APP_API}/discover/movie?page=${page}`;
 
@@ -34,10 +34,8 @@ export async function getMovieData(
     url += `&sort_by=${sortBy}`;
   }
 
-  if (keywords.length > 0) {
-    const SEPARETOR = ",";
-    const KEYWORDS_PARAM = selectedGenres.join(SEPARETOR);
-    url += `&with_keywords=${KEYWORDS_PARAM}`;
+  if (keyword) {
+    url += `&with_keywords=${keyword}`;
   }
 
   try {
@@ -65,6 +63,23 @@ export async function getKeywords(keyword) {
 
     const data = await response.json();
     return data;
+  } catch (error) {
+    console.error(error.message);
+    return [];
+  }
+}
+
+export async function getMovieDetails(movieId) {
+  const url = `${APP_API}/movie/${movieId}`;
+  try {
+    const RESPONSE = await fetch(url, { headers });
+    if (!RESPONSE.ok) {
+      throw new Error(`Response status: ${RESPONSE.status}`);
+    }
+
+    const DATA = await RESPONSE.json();
+    console.log(DATA);
+    return DATA;
   } catch (error) {
     console.error(error.message);
     return [];

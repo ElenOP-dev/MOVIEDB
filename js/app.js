@@ -13,7 +13,8 @@ import { openUserMenu } from "./components/usermenu.js";
 import { scrollUp } from "./components/navBar.js";
 import { searchFilter } from "./components/searchFilters.js";
 import { sortingOptions } from "./components/sorting.js";
-import { selectedKeyword } from "./components/keywords.js";
+import { debounce, selectedKeyword } from "./components/keywords.js";
+
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -28,5 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await searchFilter()
   sortingOptions()
   selectedKeyword()
+  debounce()
+
 
 });

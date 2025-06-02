@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styleForDetails.css" />
+    <title>Document</title>
+  </head>
+  <body id="detailsPage">
+    <!-- header start -->
+    <header>
+      <div class="container-for-header">
+        <nav>
+          <div class="navigation">
+            <div class="for-left-part">
+              <img
+                class="menu-toggle"
+                src="../assets/icons/menu-toggle-icon.svg"
+                alt="Menu Icon"
+              />
+
+              <img
+                class="desktop-logo"
+                src="../assets/images/logo-for-desktop.svg"
+                alt="Brand Logo"
+              />
+              <ul class="open-menu">
+                <li>
+                  <a href="#">Movies</a>
+                  <ul class="dropdown">
+                    <li><a>Popular</a></li>
+                    <li><a>Now Playing</a></li>
+                    <li><a>Upcoming</a></li>
+                    <li><a>Top Rated</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">TV Shows</a>
+                  <ul class="dropdown">
+                    <li><a>Pupular</a></li>
+                    <li><a>Airing Today</a></li>
+                    <li><a>On TV</a></li>
+                    <li><a>Top Rated</a></li>
+                  </ul>
+                </li>
+                <li id="small-li">
+                  <a href="#">People</a>
+                  <ul class="dropdown">
+                    <li><a>Popular People</a></li>
+                  </ul>
+                </li>
+                <li class="none-for-mobile">
+                  <a class="more" href="#">More</a>
+                  <ul class="dropdown">
+                    <li><a>Discussions</a></li>
+                    <li><a>Leaderboard</a></li>
+                    <li><a>Support</a></li>
+                    <li><a>API Documentation</a></li>
+                    <li><a>API for Business</a></li>
+                  </ul>
+                </li>
+                <div class="only-for-mobile">
+                  <li><a>Contribution Bible</a></li>
+                  <li><a>Discussions</a></li>
+                  <li><a>Leaderboard</a></li>
+                  <li><a>API</a></li>
+                  <li><a>Support</a></li>
+                  <li id="small-li"><a>About</a></li>
+                </div>
+                <li class="logout"><a>Logout</a></li>
+              </ul>
+            </div>
+            <img
+              class="brand-logo"
+              src="../assets/images/logo-for-mobile.svg"
+              alt="Brand Logo"
+            />
+
+            <div class="right-part-icons">
+              <ul>
+                <li class="only-for-desktop">
+                  <a href="#">
+                    <img
+                      class="plus"
+                      src="../assets/icons/plus.svg"
+                      alt="plus Icon"
+                    />
+                  </a>
+                </li>
+                <li class="only-for-desktop">
+                  <div class="language"><a href="#">en</a></div>
+                </li>
+                <li>
+                  <img
+                    class="note"
+                    src="../assets/icons/glyphicons-basic-441-bell-9cd2af257b98c4af3460078777d8e38a5e12bca89704eeac2f39273afcbd06ff.svg"
+                    alt="Notification Icon"
+                  />
+                </li>
+                <li class="username">
+                  <a class="user"><span class="avatar">E</span></a>
+                  <span class="tooltip">Profile and Settings</span>
+                  <div class="user-dropdown">
+                    <div class="group">
+                      <h2>Elas</h2>
+                      <span>View profile</span>
+                    </div>
+                    <div class="group">
+                      <p>DIscussions</p>
+                      <p>Lists</p>
+                      <p>Ratings</p>
+                      <p>Watchlist</p>
+                    </div>
+                    <div class="group">
+                      <p>API Subscription</p>
+                      <p>Edit Profile</p>
+                      <p>Settings</p>
+                    </div>
+                    <div class="group">
+                      <p>Logout</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    class="search"
+                    src="../assets/icons/search.svg"
+                    alt="Search Icon"
+                  />
+                  <img
+                    class="close-icon"
+                    src="../assets/icons/glyphicons-basic-599-menu-close-7400e9a2ea92ad8d7cccf18d1ea34cd690790638a6e7768922eaef6e07109723.svg"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- small searching part start -->
+      <div class="searching-input">
+        <img
+          class="search-img"
+          src="../assets/icons/glyphicons-basic-28-search-3992eb97b2b749f09793f9653407c499aa896d99535cb35cc66682d26a49df13.svg"
+          alt=""
+        />
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search for a movie,tv show,person..."
+        />
+      </div>
+      <!-- searching part -->
+    </header>
+    <!-- header end -->
+    <!-- main start  -->
+    <main>
+      <div class="container-for-subnav">
+        <nav class="sub-navigation">
+          <ul>
+            <!-- first  -->
+            <li class="menu-first-option">
+              <a>Overview </a>
+              <svg
+                class="arrow-for-subnav"
+                viewBox="0 0 512 512"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M256 352 128 160h256z"></path>
+              </svg>
+              <ul class="sub-dropdown">
+                <li><a>Main</a></li>
+                <li><a>Alternative Titles</a></li>
+                <li><a>Cast & Crew</a></li>
+                <li><a>Release Dates</a></li>
+                <li><a>Translations</a></li>
+                <li class="changes"><a>Changes</a></li>
+                <li><a>Report</a></li>
+                <li><a>Edit</a></li>
+              </ul>
+            </li>
+            <!-- second  -->
+            <li class="media">
+              <a>Media</a>
+              <svg
+                class="arrow-for-subnav"
+                viewBox="0 0 512 512"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M256 352 128 160h256z"></path>
+              </svg>
+              <ul class="second-option-dropdown">
+                <li><a>Backdrops</a> <span>144</span></li>
+                <li><a>Logos</a> <span>32</span></li>
+                <li><a>Posters</a> <span>329</span></li>
+                <li class="videos">
+                  <a>Videos</a>
+                  <svg
+                    class="rotated-arrow"
+                    viewBox="0 0 512 512"
+                    focusable="false"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M256 352 128 160h256z"></path>
+                  </svg>
+                  <ul class="dropdown-for-videos">
+                    <li><a>Teasers</a> <span>43</span></li>
+                    <li><a>Featurettes</a> <span>43</span></li>
+                    <li><a>Clips</a> <span>12</span></li>
+                    <li><a>Behind the Scenes</a> <span>4</span></li>
+                    <li><a>Trailers</a> <span>2</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <!-- third -->
+            <li class="fandom">
+              <a>Fandom</a>
+              <svg
+                class="arrow-for-subnav"
+                viewBox="0 0 512 512"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M256 352 128 160h256z"></path>
+              </svg>
+              <ul class="third-option-dropdown">
+                <li class="discussion">
+                  <a>Discussions</a>
+                  <svg
+                    class="rotated-arrow"
+                    viewBox="0 0 512 512"
+                    focusable="false"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M256 352 128 160h256z"></path>
+                  </svg>
+                  <ul class="discussion-dropdown">
+                    <li><a>Overview</a></li>
+                    <li><a>General</a> <span>2</span></li>
+                    <li><a>Content Issues</a> <span>6</span></li>
+                  </ul>
+                </li>
+                <li><a>Reviews</a></li>
+              </ul>
+            </li>
+            <!-- forth -->
+            <li class="share">
+              <a>Share</a>
+              <svg
+                class="arrow-for-subnav"
+                viewBox="0 0 512 512"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M256 352 128 160h256z"></path>
+              </svg>
+              <ul class="shared-dropdown">
+                <li><a>Share Link</a></li>
+                <li><a>Facebook </a></li>
+                <li><a>Tweet</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="movie-details">
+        <img
+          src="../assets/icons/glyphicons-basic-636-circle-info-06837a451a09552349b182d84ae84f26308efee8f7e8ddca255bd5dbc4a66ea4.svg"
+          alt=""
+        />
+      </section>
+    </main>
+
+    <!-- footer start -->
+    <footer>
+      <div class="footer-content">
+        <div class="logo-div">
+          <img src="../assets/images/logo-for-mobile.svg" alt="Brand Logo" />
+          <button><a href="#">Hi Elas!</a></button>
+        </div>
+
+        <div class="lists">
+          <h3>THE BASICS</h3>
+          <ul>
+            <li><a>About TMDB</a></li>
+            <li><a>Contact Us</a></li>
+            <li><a>Support Forums</a></li>
+            <li><a>API Documentation</a></li>
+            <li><a>System Status</a></li>
+          </ul>
+        </div>
+        <div class="lists">
+          <h3>GET INVOLVED</h3>
+          <ul>
+            <li><a>Contribution Bible</a></li>
+            <li><a>Add New Movie</a></li>
+            <li><a>Add New TV Show</a></li>
+          </ul>
+        </div>
+        <div class="lists">
+          <h3>COMMUNITY</h3>
+          <ul>
+            <li><a>Guidelines</a></li>
+            <li><a>Discussions</a></li>
+            <li><a>Leaderboard</a></li>
+          </ul>
+        </div>
+        <div class="lists">
+          <h3>LEGAL</h3>
+          <ul>
+            <li><a>Terms of Use</a></li>
+            <li><a>API Terms of Use</a></li>
+            <li><a>Privacy Policy</a></li>
+            <li><a>DMCA Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="last-row">Build 7d64203 (8679)</div>
+    </footer>
+
+    <!-- footer end -->
+    <script src="../app.js" type="module" defer></script>
+    <script src="../js/components/movieDetails.js" type="module" defer></script>
+  </body>
+</html>
